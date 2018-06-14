@@ -1,0 +1,2 @@
+# Git Ignore NodeModule
+node_modules/**
