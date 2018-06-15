@@ -1,6 +1,3 @@
-function hello () : string
-{
-   return "Hello world";
-}
+import { hello } from "./function_A";
 
-console.log(hello());
+console.log(hello("Aser"));
