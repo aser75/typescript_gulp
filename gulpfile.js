@@ -1,19 +1,26 @@
 var gulp = require("gulp");
 var browserify = require("browserify");
 var source = require('vinyl-source-stream');
+var watchify = require("watchify");
 var tsify = require("tsify");
+var gutil = require("gulp-util");
+
+var watchedBrowserify = watchify(browserify({
+    basedir: '.',
+    debug: true,
+    entries: ['src/ts/main.ts'],
+    cache: {},
+    packageCache: {}
+}).plugin(tsify));
 
 
-gulp.task("default", function () {
-    return browserify({
-        basedir: '.',
-        debug: true,
-        entries: ['src/ts/main.ts'],
-        cache: {},
-        packageCache: {}
-    })
-    .plugin(tsify)
-    .bundle()
-    .pipe(source('bundle.js'))
-    .pipe(gulp.dest("dist/js"));
-});
+function bundle() {
+    return watchedBrowserify
+        .bundle()
+        .pipe(source('bundle.js'))
+        .pipe(gulp.dest("dist/js"));
+}
+
+gulp.task("default", bundle);
+watchedBrowserify.on("update", bundle);
+watchedBrowserify.on("log", gutil.log);
