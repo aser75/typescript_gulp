@@ -1,3 +1,3 @@
 import { hello } from "./function_A";
 
-console.log(hello("Maxence"));
+console.log(hello("Maxencse"));

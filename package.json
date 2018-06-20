@@ -30,6 +30,7 @@
     "gulp-stylus": "latest",
     "gulp-typescript": "^5.0.0-alpha.1",
     "gulp-util": "^3.0.8",
+    "gulp-watch": "^5.0.0",
     "tsify": "^4.0.0",
     "typescript": "^2.9.2",
     "vinyl-source-stream": "^2.0.0",
