@@ -49,7 +49,7 @@ gulp.task('minify', ['css'] , function () {
 });
 
 gulp.task('imagemini', () =>
-    gulp.src( paths.srcImg )
+    gulp.src( './src/images/**/*' )
         .pipe(imagemin([
             imagemin.gifsicle({interlaced: true}),
             imagemin.jpegtran({progressive: true}),
@@ -61,14 +61,14 @@ gulp.task('imagemini', () =>
                 ]
             })
         ]))
-        .pipe(gulp.dest( paths.distImg ))
+        .pipe(gulp.dest( './dist/images/' ))
 );
 
 gulp.task("js-watch", bundle);
 gulp.task("integration",['minify'] )
 
 gulp.task('css-watch', function () {
-  gulp.watch( "./src/stylus/**/*.styl", ['integration']);
+  gulp.watch( "./src/stylus/**/*.styl", ['integration', 'imagemini']);
 });
 
 watchedBrowserify.on("update", bundle);
