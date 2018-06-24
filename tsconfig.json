@@ -1,21 +1,6 @@
 {
-    "files": [
-        "src/ts/main.ts",
-        "src/ts/function_A.ts"
-    ],
     "compilerOptions": {
-        "noImplicitAny": true,
-        "target": "es5",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "sourceMap": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true, 
-        "removeComments": false,
-        "lib": [
-            "es2016",
-            "dom",
-            "es5"
-        ]
+        "target":  "es5",
+        "sourceMap": true
     }
 }

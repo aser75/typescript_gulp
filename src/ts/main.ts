@@ -1,3 +1,2 @@
-import { hello } from "./function_A";
-
-console.log(hello("Maxencse"));
+$("h2").hide();
+$("#mainSlider-js").slick();
