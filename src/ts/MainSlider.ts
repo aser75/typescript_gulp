@@ -29,7 +29,7 @@ export default class MainSlider
    ) {}
 
    /**
-    * [slide_A fonction slider basique]
+    * [slide_simple fonction slider basique]
     * @return void
     */
    slide_simple(): void
