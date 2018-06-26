@@ -9,7 +9,9 @@ export default class MainSlider
    /*
       @var conteneur du slide
     */
-   public slideFor:JQuery;
+   public slideFor:     JQuery;
+   public validation:   boolean = false;
+   public slideNav:     JQuery = $("#slideNav-js");
 
    /**
     * [constructor]
@@ -21,27 +23,82 @@ export default class MainSlider
     */
 
    constructor (
-      public content:JQuery,
-      public slideShow:number,
-      public scrollShow:number,
-      public dots:boolean,
-      public arrows: boolean,
+      public content:      JQuery,
+      public slideShow:    number,
+      public scrollShow:   number,
+      public dots:         boolean,
+      public arrows:       boolean,
    ) {}
 
    /**
-    * [slide_simple fonction slider basique]
+    * [slide_simple slider basique]
     * @return void
     */
-   slide_simple(): void
+   public slide_simple(): void
    {
+
       let slideFor = this.content.children("#slideFor-js");
-      slideFor.slick({
-         slidesToShow: this.slideShow,
-         slidesToScroll: this.scrollShow,
-         arrows: this.arrows,
-         dots: this.dots,
-         fade: true,
-      });
+
+      if(this.has_nav())
+      {
+
+         slideFor.slick({
+            slidesToShow: this.slideShow,
+            slidesToScroll: this.scrollShow,
+            arrows: this.arrows,
+            dots: this.dots,
+            fade: true,
+            asNavFor: '#slideNav-js'
+         });
+
+         this.slide_nav();
+
+      }
+      else
+      {
+
+         slideFor.slick({
+            slidesToShow: this.slideShow,
+            slidesToScroll: this.scrollShow,
+            arrows: this.arrows,
+            dots: this.dots,
+            fade: true,
+         });
+
+      }
+
    }
+
+
+   /**
+    * [slide_nav slider navigation]
+    * @return void
+    */
+   private slide_nav(): void
+   {
+
+      this.slideNav.slick({
+         slidesToShow: 3,
+         slidesToScroll: 1,
+         dots: true,
+         centerMode: true,
+         focusOnSelect: true,
+         asNavFor: '#slideFor-js',
+      })
+
+   }
+
+
+   public has_nav()
+   {
+
+      if (this.slideNav.length === 1)
+      {
+         return true;
+      }
+      return false;
+
+   }
+
 
 }
