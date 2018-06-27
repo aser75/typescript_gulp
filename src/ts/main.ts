@@ -7,4 +7,4 @@ import HeightHeader from "./HeightHeader";
 new MainSlider(1, 1, true, true).slide_simple();
 
 // Class instance header
-new HeightHeader().test();
+new HeightHeader().sizeHeader();

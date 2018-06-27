@@ -4,10 +4,30 @@
 export default class HeightHeader
 {
 
+   public header:      JQuery = $("#header-js");
+   public height: number;
+
    constructor(){}
 
-   test() {
-      return console.log("test");
+   /**
+    * [sizeHeader]
+    * @return [description]
+    */
+   public sizeHeader(): void
+   {
+
+      this.heightHeader();
+      window.onresize = this.heightHeader;
+   }
+
+   /**
+    * [heightHeader add size header]
+    * @return [number en px]
+    */
+   public heightHeader()
+   {
+      let height = $(window).height();
+      $("#header-js").css( "height", height );
    }
 
 
