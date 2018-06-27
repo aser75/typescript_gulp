@@ -1,7 +1,10 @@
-//$("h2").hide();
 import MainSlider from "./MainSlider";
+import HeightHeader from "./HeightHeader";
 
 
 
-let selector = $("#mainSlider-js");
-new MainSlider(selector, 1, 1, true, true).slide_simple();
+// Class instance slider
+new MainSlider(1, 1, true, true).slide_simple();
+
+// Class instance header
+new HeightHeader().test();

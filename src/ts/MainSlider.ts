@@ -1,5 +1,3 @@
-
-
 /**
  * [Class slide Js]
  */
@@ -12,23 +10,22 @@ export default class MainSlider
    public slideFor:     JQuery;
    public validation:   boolean = false;
    public slideNav:     JQuery = $("#slideNav-js");
+   public content:      JQuery = $("#mainSlider-js");
 
    /**
     * [constructor]
-    * @param content    [select du conteneur des conteneur type de Slider]
     * @param slideShow  [le nombre de slide visible à la fois]
     * @param scrollShow [le nombre de bloc scroller par action ]
     * @param dots       [afficher/cacher points]
     * @param arrows     [afficher/cacher fleche]
     */
-
    constructor (
-      public content:      JQuery,
       public slideShow:    number,
       public scrollShow:   number,
       public dots:         boolean,
       public arrows:       boolean,
    ) {}
+
 
    /**
     * [slide_simple slider basique]
@@ -41,7 +38,6 @@ export default class MainSlider
 
       if(this.has_nav())
       {
-
          slideFor.slick({
             slidesToShow: this.slideShow,
             slidesToScroll: this.scrollShow,
@@ -52,11 +48,9 @@ export default class MainSlider
          });
 
          this.slide_nav();
-
       }
       else
       {
-
          slideFor.slick({
             slidesToShow: this.slideShow,
             slidesToScroll: this.scrollShow,
@@ -89,7 +83,11 @@ export default class MainSlider
    }
 
 
-   public has_nav()
+   /**
+    * [has_nav has sliderNav]
+    * @return boolean
+    */
+   private has_nav()
    {
 
       if (this.slideNav.length === 1)
