@@ -7,6 +7,7 @@ export default class MainSlider
    /*
       @var conteneur du slide
     */
+   
    public slideFor:     JQuery;
    public validation:   boolean = false;
    public slideNav:     JQuery = $("#slideNav-js");
@@ -19,6 +20,7 @@ export default class MainSlider
     * @param dots       [afficher/cacher points]
     * @param arrows     [afficher/cacher fleche]
     */
+
    constructor (
       public slideShow:    number,
       public scrollShow:   number,
