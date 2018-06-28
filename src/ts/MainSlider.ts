@@ -7,7 +7,7 @@ export default class MainSlider
    /*
       @var conteneur du slide
     */
-   
+
    public slideFor:     JQuery;
    public validation:   boolean = false;
    public slideNav:     JQuery = $("#slideNav-js");
@@ -35,7 +35,6 @@ export default class MainSlider
     */
    public slide_simple(): void
    {
-
       let slideFor = this.content.children("#slideFor-js");
 
       if(this.has_nav())
@@ -45,7 +44,6 @@ export default class MainSlider
             slidesToScroll: this.scrollShow,
             arrows: this.arrows,
             dots: this.dots,
-            fade: true,
             asNavFor: '#slideNav-js'
          });
 
@@ -58,11 +56,8 @@ export default class MainSlider
             slidesToScroll: this.scrollShow,
             arrows: this.arrows,
             dots: this.dots,
-            fade: true,
          });
-
       }
-
    }
 
 
@@ -72,16 +67,13 @@ export default class MainSlider
     */
    private slide_nav(): void
    {
-
       this.slideNav.slick({
          slidesToShow: 3,
          slidesToScroll: 1,
          dots: true,
-         centerMode: true,
          focusOnSelect: true,
          asNavFor: '#slideFor-js',
       })
-
    }
 
 
@@ -91,13 +83,11 @@ export default class MainSlider
     */
    private has_nav()
    {
-
       if (this.slideNav.length === 1)
       {
          return true;
       }
       return false;
-
    }
 
 
