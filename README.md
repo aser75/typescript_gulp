@@ -3,7 +3,7 @@
 Création d'un petit StarterKit perso pour de l'intégration.
 Avec Gulp / Stylus / Typescript / Jquery / Slickjs
 
-### H3 Librairie
+##  Librairie
 * [Gulp](https://gulpjs.com) - Gulp, automatiser les taches
 * [Jquery](https://jquery.com) - Jquery, manipuler le DOM
 * [Slickjs](http://kenwheeler.github.io/slick/) - Slick js, créer facilement des slider
