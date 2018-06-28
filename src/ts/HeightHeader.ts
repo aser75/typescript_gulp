@@ -5,7 +5,7 @@ export default class HeightHeader
 {
 
    public header:      JQuery = $("#header-js");
-   public height: number;
+   public height:      number;
 
    constructor(){}
 
@@ -15,7 +15,6 @@ export default class HeightHeader
     */
    public sizeHeader(): void
    {
-
       this.heightHeader();
       window.onresize = this.heightHeader;
    }
@@ -27,6 +26,9 @@ export default class HeightHeader
    public heightHeader()
    {
       let height = $(window).height();
+      console.log(height);
+      height = height - 100;
+      console.log(height);
       $("#header-js").css( "height", height );
    }
 
